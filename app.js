@@ -81,6 +81,7 @@ app.post("/reset", function(req, res){
   res.redirect("/instructor")
 });
 
-app.listen(80, function(){
-  console.log("THE SERVER IS LISTENING ON localhost:3000");
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function(){
+  console.log("Listening on " + port);
 });
