@@ -81,6 +81,6 @@ app.post("/reset", function(req, res){
   res.redirect("/instructor")
 });
 
-app.listen(3000, function(){
+app.listen(80, function(){
   console.log("THE SERVER IS LISTENING ON localhost:3000");
 });
