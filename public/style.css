@@ -1,0 +1,18 @@
+
+body {
+	background-color: #C5F8F6;
+	font-family: tahoma;
+	color: #5091C8;
+	text-indent: 10px;
+}
+
+h1 {
+	color: #4AD18C;
+	font-family: comic sans ms;
+};
+
+/*
+-- not working --
+div.infoBox { color: #10E0B0; }
+*/
+
