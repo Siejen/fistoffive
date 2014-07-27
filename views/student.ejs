@@ -1,23 +1,45 @@
 <!doctype html>
 <html>
 	<head>
-	<style>
+		<link href="/style.css" rel="stylesheet" type="text/css" />
+		<style>
+			div.infoBox { 
+				color: #5091C8;
+				border: 5px solid white;
+				border-radius: 8px;	
+			}
+			li {
+				list-style-type: none;
+				text-indent: -20px;
+			}
 
-	</style>
+		</style>
 	</head>
+
 	<body>
 		<h1>Fist of Five (Student View)</h1>
       <form method="post" action="/fist">
 	      <input type="text" placeholder="First Name" name="firstname">
 	      <input type="text" placeholder="Last Name" name="lastname">
-	      <select name=ranking>
-		    <option name=one value="1"> 1 </option>
-			<option name=two value="2"> 2 </option>
-			<option name=three value="3"> 3 </option>
-			<option name=four value="4"> 4 </option>
-			<option name=five value="5" selected> 5 </option>
-		</select>
+	      <select name="ranking">
+		    <option name="one"   value="1"> 1 </option>
+			<option name="two"   value="2"> 2 </option>
+			<option name="three" value="3"> 3 </option>
+			<option name="four"  value="4"> 4 </option>
+			<option name="five"  value="5" selected> 5 </option>
+		  </select>
 		<button>Submit</button> 
 	   </form>
+	   <br/>
+	   <div class="infoBox">
+	   		<p>Submit Your Fist of Five:</p>
+	   		<ul>
+	   			<li>5 = I completely understand</li>
+	   			<li>4 = I mostly understand</li>
+	   			<li>3 = I understand pretty well</li>
+	   			<li>2 = I need help</li>
+	   			<li>1 = I don't understand at all</li>
+	   		</ul>
+	   </div>
 	</body>
 </html>

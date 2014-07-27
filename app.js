@@ -7,6 +7,7 @@ var app = express();
 app.set("view engine", "ejs");
 // Middleware
 app.use(bodyParser.urlencoded());
+app.use(express.static(__dirname + '/public'));
 
 var model = [];
 
@@ -39,6 +40,10 @@ var max = function(arr) {
   return currentMax;
 }
 
+app.get("/", function(req, res){
+  res.render("index", {})    
+});
+
 app.get("/student", function(req, res){
   res.render("student", {})    
 });
@@ -58,6 +63,22 @@ app.get("/results", function(req, res){
   var theAvg = avg(model);
 
   res.render("results", {avg : theAvg, min: theMin, max: theMax, num: model.length});    
+});
+
+app.get("/instructor", function(req, res){
+  console.log(model);
+  var theMin = min(model);
+  var theMax = max(model);
+  var theAvg = avg(model);
+
+  res.render("instructor", {avg : theAvg, min: theMin, max: theMax, num: model.length});    
+});
+
+app.post("/reset", function(req, res){
+  console.log("reset");
+  model = []
+  console.log(model);
+  res.redirect("/instructor")
 });
 
 app.listen(3000, function(){
